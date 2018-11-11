@@ -89,13 +89,9 @@ async function run () {
     }
   }
 
-  // app
+  app.use(handleSPSP)
     
-  //   .listen(port)
-
-  https.createServer(app.callback())
-    .use(handleSPSP)
-    .listen(port);
+  https.createServer(app.callback()).listen(8080);
 
   console.log('listening on ' + port)
   if (argv.localtunnel) {
