@@ -9,6 +9,10 @@ const Koa = require('koa')
 const app = new Koa()
 const crypto = require('crypto')
 
+const https = require('https');
+const http = require('http');
+
+
 const name = crypto.randomBytes(8).toString('hex')
 const argv = require('yargs')
   .option('subdomain', {
@@ -88,6 +92,8 @@ async function run () {
   app
     .use(handleSPSP)
     .listen(port)
+
+  https.createServer(app.callback()).listen(3001);
 
   console.log('listening on ' + port)
   if (argv.localtunnel) {
