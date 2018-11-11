@@ -90,7 +90,7 @@ async function run () {
     }
   }
 
-  // app.use(handleSPSP)
+  app.use(handleSPSP)
   app.use(async ctx => {
     console.log('we got a hit!!')
     ctx.body = 'Hello World';
