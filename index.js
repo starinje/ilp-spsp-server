@@ -13,6 +13,7 @@ const fs = require('fs')
 const https = require('https');
 const http = require('http');
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 
 const name = crypto.randomBytes(8).toString('hex')
 const argv = require('yargs')
