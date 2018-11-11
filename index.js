@@ -95,7 +95,7 @@ async function run () {
     ctx.body = 'Hello World';
   })
     
-  https.createServer(app.callback()).listen(8080);
+  http.createServer(app.callback()).listen(8080);
 
   console.log('listening on ' + port)
   if (argv.localtunnel) {
