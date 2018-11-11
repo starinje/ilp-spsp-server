@@ -68,7 +68,7 @@ async function run () {
   console.log('created receiver...')
   async function handleSPSP (ctx, next) {
 
-    console.log('got in here!!!!!')
+    console.log('got in handleSPSP method!!!!')
     if (ctx.get('Accept').indexOf('application/spsp4+json') !== -1) {
       const details = streamServer.generateAddressAndSecret()
       ctx.body = {
