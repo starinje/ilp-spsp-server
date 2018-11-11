@@ -8,6 +8,7 @@ const PSK2 = require('ilp-protocol-psk2')
 const Koa = require('koa')
 const app = new Koa()
 const crypto = require('crypto')
+const fs = require('fs')
 
 const https = require('https');
 const http = require('http');
