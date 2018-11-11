@@ -90,6 +90,10 @@ async function run () {
   }
 
   app.use(handleSPSP)
+  app.use(async ctx => {
+    console.log('we got a hit!!')
+    ctx.body = 'Hello World';
+  })
     
   https.createServer(app.callback()).listen(8080);
 
