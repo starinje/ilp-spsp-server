@@ -98,7 +98,7 @@ async function run () {
   https.createServer({
     key: fs.readFileSync('server-key.pem'),
     cert: fs.readFileSync('server-cert.pem')
-  }app.callback()).listen(8080);
+  },app.callback()).listen(8080);
 
   console.log('listening on ' + port)
   if (argv.localtunnel) {
