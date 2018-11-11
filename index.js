@@ -98,7 +98,8 @@ async function run () {
     
   https.createServer({
     key: fs.readFileSync('server-key.pem'),
-    cert: fs.readFileSync('server-cert.pem')
+    cert: fs.readFileSync('server-cert.pem'),
+    rejectUnauthorized: false
   },app.callback()).listen(8080);
 
   console.log('listening on ' + port)
