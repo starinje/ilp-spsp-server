@@ -13,8 +13,6 @@ const fs = require('fs')
 const https = require('https');
 const http = require('http');
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
-
 const name = crypto.randomBytes(8).toString('hex')
 const argv = require('yargs')
   .option('subdomain', {
@@ -100,6 +98,7 @@ async function run () {
   https.createServer({
     key: fs.readFileSync('server-key.pem'),
     cert: fs.readFileSync('server-cert.pem'),
+    requestCert: true,
     rejectUnauthorized: false
   },app.callback()).listen(8080);
 
